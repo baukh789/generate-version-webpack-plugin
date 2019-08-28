@@ -1,0 +1,16 @@
+{
+    "name": "generate-version-webpack-plugin",
+    "version": "0.0.1",
+    "main": "./index.js",
+    "scripts": {
+        "copyfile": "cp -r ./README.md ./scripts/ && cp -r ./package.json ./scripts/",
+        "removefile": "rm -rf ./scripts/README.md && rm -rf ./scripts/package.json",
+        "preversion": "npm run copyfile",
+        "version": "npm publish scripts",
+        "postversion": "npm run removefile && git push && git push --tags"
+    },
+    "author": "baukh",
+    "dependencies": {
+        "gridmanager": "^2.9.0"
+    }
+}
