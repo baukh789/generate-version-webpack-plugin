@@ -1,4 +1,5 @@
 # generate-version-webpack-plugin
+> 在webpack中配置，在构建项目时会生成在`output`指定目录下生成`version`文件夹。通过访问`version/index.html`，即可进行版本信息展示。
 
 ## 使用方式
 ### 创建version.json文件，用于填写版本信息
@@ -32,6 +33,9 @@ plugins: [
 ### 配置参数
 ```
 new VersionPlugin({
+    // 指定显示title [当前展示的为默认值]
+    title: '更新日志',
+
     // 指定版本信息数据的绝对路径, 必设项。 [默认值使用数据为插件自身的版本信息]
     dataPath: path.join(__dirname, './version.json'),
 
