@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<link type="text/css" rel="stylesheet" href="./style.css"/>
+	<style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		.version-li{
+			display: flex;
+		}
+		.version-li:not(:last-child){
+			margin-bottom: 10px !important;
+		}
+		.version-li > label{
+			white-space: inherit;
+			padding-right: 10px;
+		}
+		.version-li > p{
+			margin: 0;
+			white-space: initial;
+		}
+	</style>
+</head>
+<body>
+<table></table>
+<script src="./index.js"></script>
+<script src="./gridmanager.js"></script>
+<script>
+(function(ajaxData, versionType) {
+	if (!ajaxData || !versionType) {
+		console.error('generate-version-webpack-plugin option error!');
+		return;
+	}
+	document.querySelector('table').GM('init', {
+		gridManagerName: 'generate-webpack-version-plugin',
+		height: '100%',
+		supportCheckbox: false,
+		ajaxData: ajaxData,
+		columnData: [
+			{
+				key: 'number',
+				text: '版本号',
+				width: '100px'
+			},
+			{
+				key: 'date',
+				text: '发布时间',
+				width: '100px'
+			},
+			{
+				key: 'list',
+				text: '发布内容',
+				template: (list) => {
+					let tmp = '<ul>';
+					list.forEach(item => {
+						tmp += `<li class="version-li"><label style="${versionType[item.type].style}">${versionType[item.type].text}: </label><p>${item.value}</p></li>`;
+					});
+					tmp += '</ul>';
+					return tmp
+				}
+			}
+		]
+	});
+})(window.ajaxData, window.versionType);
+</script>
+</body>
+</html>

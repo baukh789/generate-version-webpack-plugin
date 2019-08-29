@@ -1,0 +1,26 @@
+[
+    {
+        "number": "v0.1.0",
+        "date": "2019-08-29",
+        "list": [
+            {
+                "type": "2",
+                "value": "fix file path error"
+            }
+        ]
+    },
+    {
+        "number": "v0.0.1",
+        "date": "2019-08-28",
+        "list": [
+            {
+                "type": "1",
+                "value": "init generate-version-webpack-plugin"
+            },
+            {
+                "type": "1",
+                "value": "support customize type and dataPath"
+            }
+        ]
+    }
+]
