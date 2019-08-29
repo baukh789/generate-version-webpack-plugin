@@ -1,13 +1,13 @@
 {
     "name": "generate-version-webpack-plugin",
-    "version": "0.0.3",
+    "version": "0.1.1",
     "main": "./index.js",
     "scripts": {
-        "build": "cp -r ./scripts/. ./dist/ && npm run copyfile && npm run copygm",
+        "build": "cp -r ./scripts/. ./dist/ && npm run copygm",
         "copygm": "cp -r ./node_modules/gridmanager/css/. ./dist/css/ && cp -r ./node_modules/gridmanager/js/. ./dist/js/",
         "copyfile": "cp -r ./README.md ./dist/ && cp -r ./package.json ./dist/",
         "preversion": "npm run build",
-        "version": "npm publish dist",
+        "version": "npm run copyfile && npm publish dist",
         "postversion": "git push && git push --tags"
     },
     "author": "baukh",
