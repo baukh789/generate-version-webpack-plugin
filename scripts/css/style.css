@@ -39,6 +39,7 @@ a{
 .history-line{
 	height: 100%;
 	padding-left: 20%;
+	padding-top: 30px;
     overflow: auto;
 }
 .history-line ul {
