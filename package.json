@@ -3,9 +3,10 @@
     "version": "0.0.1",
     "main": "./index.js",
     "scripts": {
+        "copygm": "cp -r ./node_modules/gridmanager/css/. ./scripts/css/ && cp -r ./node_modules/gridmanager/js/. ./scripts/js/",
         "copyfile": "cp -r ./README.md ./scripts/ && cp -r ./package.json ./scripts/",
         "removefile": "rm -rf ./scripts/README.md && rm -rf ./scripts/package.json",
-        "preversion": "npm run copyfile",
+        "preversion": "npm run copyfile && npm run copygm",
         "version": "npm publish scripts",
         "postversion": "npm run removefile && git push && git push --tags"
     },
