@@ -1,6 +1,6 @@
 {
     "name": "generate-version-webpack-plugin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "./index.js",
     "scripts": {
         "copygm": "cp -r ./node_modules/gridmanager/css/. ./scripts/css/ && cp -r ./node_modules/gridmanager/js/. ./scripts/js/",
