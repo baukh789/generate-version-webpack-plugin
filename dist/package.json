@@ -1,6 +1,6 @@
 {
     "name": "generate-version-webpack-plugin",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "main": "./index.js",
     "scripts": {
         "build": "cp -r ./scripts/. ./dist/ && npm run copygm",
